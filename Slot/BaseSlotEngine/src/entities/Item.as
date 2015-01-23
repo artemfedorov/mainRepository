@@ -8,6 +8,12 @@ package entities
 	import starling.core.Starling;
 	import starling.textures.TextureAtlas;
 	
+	/**
+	 *Класс предназначен только для создания символов на барабанах 
+	 * @author fedorovartem
+	 * 
+	 */	
+	
 	public class Item extends MySpriteEntity
 	{
 		private var curPosI:int;

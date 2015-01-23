@@ -8,6 +8,12 @@ package
 	
 	[SWF(frameRate="60", backgroundColor = "#000FFF", height="600", width="800")]
 	
+	
+	/**
+	 *Разработка слота
+	 * Проект зависит от базового проекта BaseSlotEngine где располагаются базовые классы 
+	 */	
+	
 	public class TestSlot extends Sprite
 	{
 		

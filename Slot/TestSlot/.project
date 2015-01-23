@@ -18,12 +18,12 @@
 		<link>
 			<name>[source path] BaseSlotEngine-src</name>
 			<type>2</type>
-			<location>/Users/fedorovartem/Documents/Development/Slot/BaseSlotEngine/src</location>
+			<location>/Users/fedorovartem/Documents/Development/git/mainRepository/Slot/BaseSlotEngine/src</location>
 		</link>
 		<link>
 			<name>[source path] starling-src</name>
 			<type>2</type>
-			<location>/Users/fedorovartem/Documents/Development/frameworks/Gamua-Starling-Framework-v1.5.1-0-gdef24cc/Gamua-Starling-Framework-def24cc/starling/src</location>
+			<location>/Users/fedorovartem/Documents/Development/git/mainRepository/frameworks/Gamua-Starling-Framework-v1.5.1-0-gdef24cc/Gamua-Starling-Framework-def24cc/starling/src</location>
 		</link>
 	</linkedResources>
 </projectDescription>
