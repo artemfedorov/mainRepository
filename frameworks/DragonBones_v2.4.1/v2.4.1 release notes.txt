@@ -1,0 +1,12 @@
+Dec 5, 2013. Welcome to DragonBones v2.4.1
+V2.4.1 includes High priority bug fixing and improvements.
+
+Improvement:
+1. Refine Japanese translation in DesignPanel
+
+Bug Fixing:
+1. Fix bug: Export textures with folder structure will generate incorrect texture path for child armature.
+2. Fix bug: Sometimes change display by code will generate incorrect result.
+3. Fix bug: Sometimes change display's clor by code will generate incorrect result.
+4. Fix bug: Child armature's animation cannot be copied.
+

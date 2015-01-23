@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>TestSlot</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>com.adobe.flexbuilder.project.flexbuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>com.adobe.flexbuilder.project.actionscriptnature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>[source path] BaseSlotEngine-src</name>
+			<type>2</type>
+			<location>/Users/fedorovartem/Documents/Development/Slot/BaseSlotEngine/src</location>
+		</link>
+		<link>
+			<name>[source path] starling-src</name>
+			<type>2</type>
+			<location>/Users/fedorovartem/Documents/Development/frameworks/Gamua-Starling-Framework-v1.5.1-0-gdef24cc/Gamua-Starling-Framework-def24cc/starling/src</location>
+		</link>
+	</linkedResources>
+</projectDescription>

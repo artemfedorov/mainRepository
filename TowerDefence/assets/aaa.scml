@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="b6.1">
+    <folder id="0">
+        <file id="0" name="asset.png" width="128" height="256" pivot_x="0" pivot_y="1"/>
+        <file id="1" name="bullet.png" width="18" height="18" pivot_x="0" pivot_y="1"/>
+    </folder>
+    <entity id="0" name="entity_000">
+        <animation id="0" name="NewAnimation" length="1000">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                    <object_ref id="1" timeline="1" key="0" z_index="1"/>
+                    <object_ref id="2" timeline="2" key="0" z_index="2"/>
+                    <object_ref id="3" timeline="3" key="0" z_index="3"/>
+                </key>
+                <key id="1" time="8">
+                    <object_ref id="0" timeline="0" key="1" z_index="0"/>
+                    <object_ref id="1" timeline="1" key="1" z_index="1"/>
+                    <object_ref id="2" timeline="2" key="1" z_index="2"/>
+                    <object_ref id="3" timeline="3" key="1" z_index="3"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="bullet">
+                <key id="0" spin="0">
+                    <object folder="0" file="1" x="-372" y="184"/>
+                </key>
+                <key id="1" time="8" spin="0">
+                    <object folder="0" file="1" x="-372" y="184"/>
+                </key>
+            </timeline>
+            <timeline id="1" name="bullet_000">
+                <key id="0" spin="0">
+                    <object folder="0" file="1" x="-357" y="87"/>
+                </key>
+                <key id="1" time="8" spin="0">
+                    <object folder="0" file="1" x="-357" y="87"/>
+                </key>
+            </timeline>
+            <timeline id="2" name="bullet_001">
+                <key id="0" spin="0">
+                    <object folder="0" file="1" x="-251" y="139"/>
+                </key>
+                <key id="1" time="8" spin="0">
+                    <object folder="0" file="1" x="-251" y="139"/>
+                </key>
+            </timeline>
+            <timeline id="3" name="bullet_002">
+                <key id="0" spin="0">
+                    <object folder="0" file="1" x="-251" y="59"/>
+                </key>
+                <key id="1" time="8" spin="0">
+                    <object folder="0" file="1" x="-251" y="59"/>
+                </key>
+            </timeline>
+        </animation>
+    </entity>
+</spriter_data>
