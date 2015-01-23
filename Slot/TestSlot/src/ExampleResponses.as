@@ -1,5 +1,11 @@
 package
 {
+	
+	/**
+	 *Класс для эмулирования серверных запросов 
+	 * @author fedorovartem
+	 * 
+	 */	
 	public class ExampleResponses
 	{
 		static public var OnSpinResponse:Object = 
