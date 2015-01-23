@@ -2,8 +2,8 @@
 <actionScriptProperties analytics="false" mainApplicationPath="TestSlot.as" projectUUID="f479b1af-671d-463f-abcd-4b6011301634" version="11">
   <compiler additionalCompilerArguments="-locale en_US" advancedTelemetry="false" autoRSLOrdering="true" copyDependentFiles="false" fteInMXComponents="false" generateAccessible="false" htmlExpressInstall="true" htmlGenerate="false" htmlHistoryManagement="true" htmlPlayerVersionCheck="true" includeNetmonSwc="false" outputFolderPath="bin-debug" removeUnusedRSL="true" sourceFolderPath="src" strict="true" targetPlayerVersion="0.0.0" useApolloConfig="false" useDebugRSLSwfs="true" useFlashSDK="true" verifyDigests="true" warn="true">
     <compilerSourcePath>
-      <compilerSourcePathEntry kind="1" linkType="1" path="/Users/fedorovartem/Documents/Development/git/mainRepository/frameworks/Gamua-Starling-Framework-v1.5.1-0-gdef24cc/Gamua-Starling-Framework-def24cc/starling/src"/>
-      <compilerSourcePathEntry kind="1" linkType="1" path="/Users/fedorovartem/Documents/Development/git/mainRepository/Slot/BaseSlotEngine/src"/>
+      <compilerSourcePathEntry kind="1" linkType="1" path="/Users/fedorovartem/Documents/Development/GitHub/mainRepository/frameworks/Gamua-Starling-Framework-v1.5.1-0-gdef24cc/Gamua-Starling-Framework-def24cc/starling/src"/>
+      <compilerSourcePathEntry kind="1" linkType="1" path="/Users/fedorovartem/Documents/Development/GitHub/mainRepository/Slot/BaseSlotEngine/src"/>
     </compilerSourcePath>
     <libraryPath defaultLinkType="0">
       <libraryPathEntry kind="4" path="">
@@ -31,7 +31,7 @@
           <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/automation_agent.swc" useDefaultLinkType="false"/>
         </excludedEntries>
       </libraryPathEntry>
-      <libraryPathEntry kind="3" linkType="1" path="/Users/fedorovartem/Documents/Development/git/mainRepository/frameworks/greensock.swc" useDefaultLinkType="false"/>
+      <libraryPathEntry kind="3" linkType="1" path="/Users/fedorovartem/Documents/Development/GitHub/mainRepository/frameworks/greensock.swc" useDefaultLinkType="false"/>
     </libraryPath>
     <sourceAttachmentPath/>
   </compiler>

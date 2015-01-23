@@ -12,6 +12,11 @@ package background
 	import starling.display.Sprite;
 	import starling.textures.TextureAtlas;
 
+	/**
+	 *Класс создания и управления фоном игры 
+	 * @author fedorovartem
+	 * 
+	 */	
 	public class BackgroundView extends Sprite
 	{
 		public static var atlasesNames:Array = 
