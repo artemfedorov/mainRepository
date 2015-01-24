@@ -8,6 +8,12 @@ package interfaces
 	
 	import model.BaseStates;
 
+	
+	/**
+	 *Класс управления интерфейсом игры 
+	 * @author fedorovartem
+	 * 
+	 */	
 	public class InterfaceView extends BaseInterfaceView
 	{
 		
@@ -26,6 +32,11 @@ package interfaces
 		}
 		
 		
+		
+		/**
+		 *Реакция на окончания спина 
+		 * @param e
+		 */		
 		private function onSpinComplete(e:ApplicationEvents):void
 		{
 			if(Facade.states.auto) return;
@@ -46,6 +57,11 @@ package interfaces
 			}
 		}
 		
+		
+		/**
+		 *Реакция на отжатие кнопки 
+		 * @param $btn
+		 */		
 		override protected function onUpState($btn:MyButton):void 
 		{
 			super.onUpState($btn);
@@ -87,14 +103,28 @@ package interfaces
 			}
 		}
 		
+		/**
+		 *Реакция на нажатие кнопки 
+		 * @param $btn
+		 */
 		override protected function onDownState($btn:MyButton):void 
 		{
 			super.onDownState($btn);
 		}
+		
+		/**
+		 *Реакция на отведение от кнопки 
+		 * @param $btn
+		 */
 		override protected function onOutState($btn:MyButton):void 
 		{
 			super.onDownState($btn);
 		}
+		
+		/**
+		 *Реакция на наведение на кнопку 
+		 * @param $btn
+		 */
 		override protected function onDisableState($btn:MyButton):void 
 		{
 			super.onDownState($btn);

@@ -4,8 +4,21 @@ package model
 	import events.C;
 	import events.GlobalDispatcher;
 	
+	
+	/**
+	 * Класс реализующий всю логику поведения 
+	 * Модель всей игры
+	 * Менеджер состояний
+	 *  
+	 * @author fedorovartem
+	 * 
+	 */	
 	public class BaseStates
 	{
+		
+		/**
+		 *Все состояния игры 
+		 */		
 		public static const IDLE_STATE:String = 		"IDLE_STATE";
 		public static const PRE_SPIN_STATE:String = 	"PRE_SPIN_STATE";
 		public static const SPIN_STATE:String = 		"SPIN_STATE";
@@ -17,13 +30,19 @@ package model
 		public static const COLLECT_STATE:String = 		"COLLECT_STATE";
 		public static const BONUS_STATE:String = 		"BONUS_STATE";
 		
+		/**
+		 *Счетчик фриспинов 
+		 */		
 		private var _freespinsCount:		int;
+		
 		
 		private var _freespinOn:Boolean = 	false;
 		private var _auto:Boolean = 		false;
 		
 		
-		
+		/**
+		 * Последовательность состояний данной игры
+		 */		
 		public var queueStates:Array = 
 		[ 
 			IDLE_STATE,

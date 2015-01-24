@@ -21,11 +21,13 @@ package lines
 	import starling.display.Quad;
 	import starling.display.Sprite;
 	import starling.events.Event;
-	
+
 	/**
-	 * ...
-	 * @author 
-	 */
+	 *Класс создания и управления линиями 
+	 * @author fedorovartem
+	 * 
+	 */	
+	
 	public class BaseLinesView extends Sprite
 	{
 		public static var atlasesNames:Array = 
@@ -71,21 +73,22 @@ package lines
 		
 		protected function init(e:Event = null):void
 		{
+			//boxes - маленькие квадратики на который изображен номер линии
 			var boxes:MovieClip = Facade.layout.boxes;
 			boxesLayer = new Sprite();
 			this.parent.addChild(boxesLayer);
 			boxesLayer.x = boxes.x;
 			boxesLayer.y = boxes.y;
 			//Создание линий
-			linesLayer = new PixelMask();
+			//linesLayer - контейнер для линии который может работать с динамической маской
+			linesLayer = new PixelMask(); 
 			linesArray = new Vector.<BaseLineView>;
-			var line:BaseLineView;
-			var dic:Dictionary = AssetLoader.assetsDics;
+			var line:BaseLineView; // сама линия
 			
 			for (var i:int = 0; i < Config.linesAmout; i++) 
 			{
 				var lineName:String = "line" + String(i + 1);
-				line = createLineInstance(lineName);
+				line = createLineInstance(lineName); //Создание экземпляра нужной линии по имени/номеру
 				//Создание боксов для линий:начало
 				var boxLeft:MySpriteEntity = new MySpriteEntity(AssetLoader.assetsDics["boxes"], lineName + "Left", false);
 				boxLeft.x = boxes[lineName + "Left"].x;
@@ -108,7 +111,6 @@ package lines
 			activeLines = Config.activeLines;
 			this.addChild(linesLayer);
 
-			
 			//Создание масок
 			var layoutMask:MovieClip = Facade.layout.lines.reelsMask;
 			masks = new Sprite();

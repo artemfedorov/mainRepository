@@ -20,30 +20,10 @@ package model
 	public class Game extends BaseGame
 	{
 		
-		public static const atlasesNames:Array = 
-			[
-				"ace",
-				"butterfly",
-				"flower",
-				"flowerred",
-				"jack",
-				"king",
-				"nine",
-				"owl",
-				"pantera",
-				"queen",
-				"staticSymbols",
-				"ten",
-				"wolf",
-			];
-		public static const path:String = "game";
-		
-		
 		public function Game()
 		{
 			super();
 		}
-		
 		
 		override protected function onLayoutLoaded(e:ApplicationEvents):void
 		{

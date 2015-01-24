@@ -4,6 +4,24 @@ package reels
 
 	public class ReelsView extends BaseReelsView
 	{
+		public static const atlasesNames:Array = 
+			[
+				"ace",
+				"butterfly",
+				"flower",
+				"flowerred",
+				"jack",
+				"king",
+				"nine",
+				"owl",
+				"pantera",
+				"queen",
+				"staticSymbols",
+				"ten",
+				"wolf",
+			];
+		public static const path:String = "game";
+		
 		public function ReelsView()
 		{
 			super();

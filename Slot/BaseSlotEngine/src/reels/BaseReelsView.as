@@ -26,6 +26,26 @@ package reels
 		private var _reels:Array = [];
 		private var _reelStopCounter:int = 0;
 		
+		
+		public static const atlasesNames:Array = 
+			[
+				"ace",
+				"butterfly",
+				"flower",
+				"flowerred",
+				"jack",
+				"king",
+				"nine",
+				"owl",
+				"pantera",
+				"queen",
+				"staticSymbols",
+				"ten",
+				"wolf",
+			];
+		public static const path:String = "game";
+		
+		
 		public function BaseReelsView() 
 		{
 			GlobalDispatcher.addListener(C.STATE_CHANGED, onStateChanged);

@@ -7,6 +7,8 @@ package
 	import lines.LinesView;
 	
 	import model.Game;
+	
+	import reels.ReelsView;
 
 	public class Root extends RootClass
 	{
@@ -20,7 +22,7 @@ package
 		override protected function initQueue():void
 		{
 			addLoadQueue(LinesView.path, LinesView.atlasesNames);
-			addLoadQueue(Game.path, Game.atlasesNames);
+			addLoadQueue(ReelsView.path, ReelsView.atlasesNames);
 			addLoadQueue(InterfaceView.path, InterfaceView.atlasesNames);
 			addLoadQueue(BackgroundView.path, BackgroundView.atlasesNames);
 		}
