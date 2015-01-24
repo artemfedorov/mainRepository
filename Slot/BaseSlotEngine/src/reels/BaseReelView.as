@@ -15,10 +15,13 @@ package reels
 	import starling.display.Sprite;
 	import starling.events.EnterFrameEvent;
 	
+	
 	/**
-	 * ...
-	 * @author ValeriiT Fedorov
-	 */
+	 * Класс создания и управления барабаном
+	 * @author fedorovartem
+	 * 
+	 */	
+	
 	public class BaseReelView extends Sprite 
 	{
 		
