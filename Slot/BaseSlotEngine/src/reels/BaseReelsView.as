@@ -10,6 +10,9 @@ package reels
 	
 	import model.BaseStates;
 	
+	import reels.interfaces.IReelView;
+	
+	import starling.display.DisplayObject;
 	import starling.display.Sprite;
 
 	
@@ -24,6 +27,10 @@ package reels
 	public class BaseReelsView extends Sprite
 	{		
 		private var _reels:Array = [];
+		private var _reelsLayer:Sprite = new Sprite();
+		private var _altReels:Array = [];
+		private var _altReelsLayer:Sprite = new Sprite();
+		private var _activeReels:Array;
 		private var _reelStopCounter:int = 0;
 		
 		
@@ -66,16 +73,35 @@ package reels
 		
 		protected function init():void 
 		{
+			_activeReels = _reels;
+			this.addChild(_reelsLayer);
+			this.addChild(_altReelsLayer);
+			_altReelsLayer.visible = false;
 			for (var i:int = 0; i < Config.reelsAmount; i++) 
 			{
-				var reelView:BaseReelView = new BaseReelView();
-				reelView.x = Facade.layout.reels["reel" + String(i + 1)].x;
-				reelView.y = Facade.layout.reels["reel" + String(i + 1)].y;
-				this.addChild(reelView);
+				var reelView:IReelView = createReelView();
+				reelView.setReelNumber(i);
+				reelView.setXY(Facade.layout.reels["reel" + String(i + 1)].x, Facade.layout.reels["reel" + String(i + 1)].y);
+				_reelsLayer.addChild(reelView as DisplayObject);
 				_reels.push(reelView);
+				
+				reelView = createReelView();
+				reelView.setReelNumber(i);
+				reelView.setXY(Facade.layout.reels["reel" + String(i + 1)].x, Facade.layout.reels["reel" + String(i + 1)].y);
+				_altReelsLayer.addChild(reelView as DisplayObject);
+				_altReels.push(reelView);
 			}
 		}
-		
+
+		/**
+		 *Фукция обязательна для переопределения 
+		 * @return 
+		 * 
+		 */		
+		protected function createReelView():IReelView
+		{
+			return new BaseReelView();
+		}		
 		
 		
 		protected function initStartRolling():void
@@ -86,9 +112,9 @@ package reels
 		
 		protected function startRolling($reelIndex:uint):void 
 		{
-			for (var i:int = 0; i < _reels.length; i++) 
+			for (var i:int = 0; i < _activeReels.length; i++) 
 			{
-				_reels[i].start();
+				_activeReels[i].start();
 			}
 			TweenMax.delayedCall(2, initStopRolling);
 		}
@@ -103,8 +129,8 @@ package reels
 		
 		protected function stopRolling($reelIndex:int):void 
 		{
-			_reels[$reelIndex].stop();
-			if(_reels.length - 1 >= $reelIndex + 1) 
+			_activeReels[$reelIndex].stop();
+			if(_activeReels.length - 1 >= $reelIndex + 1) 
 				TweenMax.delayedCall(0.2, stopRolling, [$reelIndex + 1]);
 		}
 		

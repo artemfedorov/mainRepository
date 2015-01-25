@@ -1,6 +1,8 @@
 package reels
 {
 	import flash.geom.Rectangle;
+	
+	import reels.interfaces.IReelView;
 
 	public class ReelsView extends BaseReelsView
 	{
@@ -26,6 +28,12 @@ package reels
 		{
 			super();
 			this.clipRect = new Rectangle(0, 100, Facade.layout.lines.reelsMask.width, 3 * 100);
+		}
+		
+		
+		override protected function createReelView():IReelView
+		{
+			return new ReelView();
 		}
 	}
 }

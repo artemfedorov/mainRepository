@@ -5,6 +5,8 @@ package model
 	
 	import background.BackgroundView;
 	
+	import configs.Config;
+	
 	import entities.Item;
 	
 	import events.ApplicationEvents;
@@ -30,7 +32,7 @@ package model
 			Facade.apiController = new APIController();
 			Facade.layout = FactoryAssets.getMovieClipByName("layout");
 			
-			for (var i:int = 0; i < 50; i++)
+			for (var i:int = 0; i < Config.poolObjAmount; i++)
 				Facade.root.poolIn(new Item(AssetLoader.assetsDics["flowerred"], "flowerred", false));
 			
 			var back:BackgroundView = new BackgroundView();

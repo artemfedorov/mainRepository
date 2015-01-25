@@ -6,5 +6,11 @@ package reels
 		{
 			super();
 		}
+		
+		
+		override protected function animateSymbolsOnStop():void
+		{
+			trace(_reelNumber);
+		}
 	}
 }

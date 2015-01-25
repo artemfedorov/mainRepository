@@ -1,11 +1,5 @@
 package configs
 {
-	import interfaces.BaseInterfaceView;
-	
-	import lines.BaseLinesView;
-	
-	import model.BaseGame;
-
 	public class Config
 	{
 		public static var types:Array = 
@@ -24,6 +18,9 @@ package configs
 			"wolf",
 		];
 		
+		
+		
+		public static var poolObjAmount:uint = 100;
 		public static var speedRolling:Number = 25;
 		static public var reelsAmount:int = 5;
 		static public var symbolsPerReel:int = 3;

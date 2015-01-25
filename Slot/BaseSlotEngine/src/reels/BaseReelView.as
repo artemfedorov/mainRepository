@@ -12,6 +12,8 @@ package reels
 	import events.C;
 	import events.GlobalDispatcher;
 	
+	import reels.interfaces.IReelView;
+	
 	import starling.display.Sprite;
 	import starling.events.EnterFrameEvent;
 	
@@ -22,19 +24,18 @@ package reels
 	 * 
 	 */	
 	
-	public class BaseReelView extends Sprite 
+	public class BaseReelView extends Sprite implements IReelView
 	{
-		
-		private var _symbols:Vector.<Item>;
-
-		private var _run:Function;
-		private var _speed:Number = Config.speedRolling;
-		private var _shift:Number = 50;
-		private var _isStoping:Boolean;
-		private var _counter:int = 0;
-		private var _counterStopTween:int = 0;
-		private var _symbolWidth:Number;
-		private var _symbolHeight:Number;
+		protected var _reelNumber:uint;
+		protected var _symbols:Vector.<Item>;
+		protected var _run:Function;
+		protected var _speed:Number = Config.speedRolling;
+		protected var _shift:Number = 50;
+		protected var _isStoping:Boolean;
+		protected var _counter:int = 0;
+		protected var _counterStopTween:int = 0;
+		protected var _symbolWidth:Number;
+		protected var _symbolHeight:Number;
 		
 		
 		
@@ -53,9 +54,21 @@ package reels
 			createSymbols();
 		}
 		
+		public function setReelNumber(n:uint):void
+		{
+			_reelNumber = n;
+		}
 		
+		public function setXY(nx:Number, ny:Number):void
+		{
+			x = nx;
+			y = ny;
+		}
 		
-		
+		/**
+		 *Функция создания символов барабана 
+		 * 
+		 */		
 		protected function createSymbols():void 
 		{
 			var symbol:Item;
@@ -76,7 +89,10 @@ package reels
 		
 		
 		
-		
+		/**
+		 *Коллбек функция вызываемая ReelsView когда нужно начать вращать барабан 
+		 * 
+		 */		
 		public function start():void 
 		{
 			for (var i:int = 0; i < _symbols.length; i++) 
@@ -89,7 +105,10 @@ package reels
 		
 		
 		
-		
+		/**
+		 *Коллбек функция вызываемая ReelsView когда нужно остановить барабан 
+		 * 
+		 */		
 		public function stop():void
 		{
 			var symbol:Item;
@@ -111,7 +130,11 @@ package reels
 		
 		
 		
-		
+		/**
+		 *Вызов активной функции вращения барабанов 
+		 * @param e
+		 * 
+		 */		
 		protected function update(e:EnterFrameEvent):void 
 		{
 			_run();
@@ -119,7 +142,10 @@ package reels
 		
 		
 		
-		
+		/**
+		 *Функция вращения барабанов сверзу вниз 
+		 * 
+		 */		
 		protected function rollDown():void
 		{
 			var symbolsAmounts:uint = _symbols.length - 1; 
@@ -180,20 +206,32 @@ package reels
 		
 		
 		
-		
+		/**
+		 * После остановки барабана сообщаем, что барабан остановлен, а также если нужно включаем анимацию 
+		 * символ-а/ов.
+		 * 
+		 */		
 		protected function onFinnalyStopTween():void 
 		{
 			_counterStopTween--;
 			if (_counterStopTween == 0) 
 			{
-				for (var i:int = 0; i < _symbols.length; i++) 
-				{
-					_symbols[i].play();
-				}
+				animateSymbolsOnStop();
 				GlobalDispatcher.dispatch(C.REEL_STOPED);
 			}
 		}
 		
+		/**
+		 *Функция вызываемая при остановки барабана для анимирования символов 
+		 * 
+		 */		
+		protected function animateSymbolsOnStop():void
+		{
+			for (var i:int = 0; i < _symbols.length; i++) 
+			{
+				_symbols[i].play();
+			}
+		}
 		
 		
 		public function get shift():Number
